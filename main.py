@@ -1,2 +1,1 @@
-def print_text()->None:
-    print("hohoho")
+print('hello Git')
