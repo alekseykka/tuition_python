@@ -26,7 +26,7 @@ def change(contact:dict):
     return contact
 
 def main():
-    with open('contact.txt','r+',encoding='utf-8') as file:
+    with open('contact.txt', 'r+', encoding='utf-8') as file:
         contact = file.read()
 
     contact = {'Alex': 'BMW', 'Lena': 'Audi', 'Vova': 'Volvo'}
@@ -39,7 +39,7 @@ def main():
             break
         contact = job[jobs](contact)
 
-    with open('contact.txt','r+',encoding='utf-8') as file:
+    with open('contact.txt', 'r+', encoding='utf-8') as file:
         file.write(str(contact))
 
 if __name__ == '__main__':
