@@ -1,0 +1,1 @@
+{'Alex': 'BMW', 'Lena': 'Audi', 'Vova': 'Volvo', 'Dmitr': 'Opel'}
