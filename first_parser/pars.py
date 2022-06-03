@@ -10,11 +10,18 @@ def download(query: str, page_number: int):
     page = 1
 
     while page <= page_number:
+        params['page'] = page
         r = req.get(url, headers=header, params=params)
         if r.status_code == 200:
             _r = r.json()
             for item in _r.get('photos'):
-                print(item)
+
+                _img_url = item.get('src').get('original')
+                resp = req.get(item.get('src').get('original'))
+
+                image = Image.open(BytesIO(resp.content))
+                image.save(f"media/{item.get('id')}.{_img_url.split('.')[-1]}")
+
         page += 1
 
 def main():
